@@ -7,7 +7,6 @@ resource "azurerm_resource_group" "rg1" {
   location = "West Europe"
 }
 
-}
 resource "azurerm_resource_group" "rg2" {
   name     = "devrg00185812"
   location = "West Europe"
