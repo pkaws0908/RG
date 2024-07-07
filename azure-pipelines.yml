@@ -12,13 +12,15 @@ steps:
     backendAzureRmStorageAccountName: 'bkumar765'
     backendAzureRmContainerName: 'tfstatecontainer'
     backendAzureRmKey: 'pks.terraform.tfstate'
-    - task: TerraformTaskV4@4
-      inputs:
-        provider: 'azurerm'
-        command: 'plan'
-        workingDirectory: '$(System.DefaultWorkingDirectory)/dev'
-        - task: TerraformTaskV4@4
-          inputs:
-            provider: 'azurerm'
-            command: 'apply'
-            workingDirectory: '$(System.DefaultWorkingDirectory)/dev'
+
+- task: TerraformTaskV4@4
+  inputs:
+    provider: 'azurerm'
+    command: 'plan'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/dev'
+  
+- task: TerraformTaskV4@4
+  inputs:
+    provider: 'azurerm'
+    command: 'apply'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/dev'
